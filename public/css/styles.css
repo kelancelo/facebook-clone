@@ -43,7 +43,7 @@ i {
     display: grid;
     position: fixed;
     width: 100%;
-    grid-template-columns: minmax(max-content, 1fr) 40rem minmax(max-content, 1fr);
+    grid-template-columns: minmax(max-content, 1fr) 42rem minmax(max-content, 1fr);
     top: 3.5rem;
 }
 

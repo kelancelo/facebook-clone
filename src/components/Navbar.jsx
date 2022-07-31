@@ -1,9 +1,10 @@
 import { useState } from "react"
+import LeftSideMenu from "./LeftSideMenu"
 
 
-function NavLink({ svgPath, svgFilledPath, isClicked, setClickedLink }) {
+function NavLink({ svgPath, svgFilledPath, isClicked, setClickedLink, id }) {
     return (
-        <a onClick={setClickedLink}>
+        <a id={id && id} onClick={setClickedLink}>
             <img src={isClicked ? svgFilledPath : svgPath} alt="" />
             <div id="link-underline" style={{ display: isClicked ? 'inline-block' : 'none' }}></div>
         </a>
@@ -137,32 +138,51 @@ export default function Navbar() {
                 <NavLink
                     isClicked={clickedLink === 'home'}
                     setClickedLink={() => setClickedLink('home')}
-                    svgPath={'/images/home.svg'}
-                    svgFilledPath='/images/home-filled.svg'
+                    svgPath={'/images/navbar/home.svg'}
+                    svgFilledPath='/images/navbar/home-filled.svg'
                 />
                 <NavLink
                     isClicked={clickedLink === 'friends'}
                     setClickedLink={() => setClickedLink('friends')}
-                    svgPath="/images/friends.svg"
-                    svgFilledPath="/images/friends-filled.svg"
+                    svgPath="/images/navbar/friends.svg"
+                    svgFilledPath="/images/navbar/friends-filled.svg"
                 />
                 <NavLink
                     isClicked={clickedLink === 'videos'}
                     setClickedLink={() => setClickedLink('videos')}
-                    svgPath="/images/videos.svg"
-                    svgFilledPath="/images/videos-filled.svg"
+                    svgPath="/images/navbar/videos.svg"
+                    svgFilledPath="/images/navbar/videos-filled.svg"
                 />
                 <NavLink
                     isClicked={clickedLink === 'market'}
                     setClickedLink={() => setClickedLink('market')}
-                    svgPath="/images/market.svg"
-                    svgFilledPath="/images/market-filled.svg"
+                    svgPath="/images/navbar/market.svg"
+                    svgFilledPath="/images/navbar/market-filled.svg"
                 />
                 <NavLink
                     isClicked={clickedLink === 'gaming'}
                     setClickedLink={() => setClickedLink('gaming')}
-                    svgPath="/images/gaming.svg"
-                    svgFilledPath="/images/gaming-filled.svg"
+                    svgPath="/images/navbar/gaming.svg"
+                    svgFilledPath="/images/navbar/gaming-filled.svg"
+                />
+                <NavLink
+                    isClicked={clickedLink === 'menu'}
+                    setClickedLink={() => setClickedLink(cl => cl === 'menu' ? '' : 'menu')}
+                    svgPath="/images/navbar/menu.svg"
+                    svgFilledPath="/images/navbar/menu-filled.svg"
+                    id='menu'
+                />
+                <LeftSideMenu
+                    style={{
+                        display: clickedLink === 'menu' ? 'block' : 'none',
+                        position: 'absolute',
+                        top: '100%',
+                        left: '0',
+                        width: '100%',
+                        backgroundColor: '#f0f2f5',
+                        height: '100vh',
+                        // zIndex: 999999
+                    }}
                 />
             </div>
             <div id="account-controls">

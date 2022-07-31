@@ -44,7 +44,7 @@ function Haha() {
 
 function Post({ imgSrc, postImgSrc, name, caption, postAge, audience, commentCount, likes, loves, sads, hahas }) {
     const reactionCount = likes ? likes : 0 + loves ? loves : 0 + sads ? sads : 0 + hahas ? hahas : 0
-    // console.log(likes, loves, sads, hahas)
+
     return (
         <div className="post">
             <div className="post-header">
@@ -228,39 +228,58 @@ function Post({ imgSrc, postImgSrc, name, caption, postAge, audience, commentCou
 }
 
 export default function Posts() {
+    let posts = [
+        {
+            imgSrc: '/images/ed.jpg',
+            postImgSrc: "/images/post/sample-post1.jpg",
+            caption: "Help me",
+            name: "Dev Ed",
+            postAge: "4h",
+            audience: "friends",
+            commentCount: 200,
+            hahas: 20,
+            sads: 34
+        },
+        {
+            imgSrc: '/images/twt.jpg',
+            postImgSrc: "/images/post/sample-post3.jpg",
+            caption: "<3",
+            name: "Tech with Tim",
+            postAge: "7h",
+            audience: "friends",
+            commentCount: 199,
+            loves: 60
+        },
+        {
+            imgSrc: '/images/mike.jpg',
+            postImgSrc: "/images/post/sample-post2.jpg",
+            caption: "Why censor this?",
+            name: "Mike Dane",
+            postAge: "1y",
+            audience: "friends",
+            commentCount: 300,
+            sads: 500
+        }
+    ]
+
     return (
         <div id="posts">
-            <Post
-                imgSrc="/images/ed.jpg"
-                postImgSrc="/images/post/sample-post1.jpg"
-                caption="Help me"
-                name="Dev Ed"
-                postAge="4h"
-                audience="friends"
-                commentCount={200}
-                hahas={20}
-                sads={34}
-
-            />
-            <Post
-                imgSrc="/images/twt.jpg"
-                postImgSrc="/images/post/sample-post3.jpg"
-                name="Tech with Tim"
-                postAge="7h"
-                audience="friends"
-                commentCount={199}
-                loves={69}
-            />
-            <Post
-                imgSrc="/images/mike.jpg"
-                postImgSrc="/images/post/sample-post2.jpg"
-                caption="Why u censor dis??"
-                name="Mike Dane"
-                postAge="1y"
-                audience="friends"
-                commentCount={300}
-                sads={500}
-            />
+            {posts.map(post => (
+                <Post
+                    key={post.postImgSrc}
+                    imgSrc={post.imgSrc}
+                    postImgSrc={post.postImgSrc}
+                    caption={post.caption}
+                    name={post.name}
+                    postAge={post.postAge}
+                    audience={post.audience}
+                    commentCount={post.commentCount}
+                    likes={post.likes}
+                    loves={post.loves}
+                    sads={post.sads}
+                    hahas={post.hahas}
+                />
+            ))}
         </div>
     )
 }

@@ -5,19 +5,19 @@ export default function WhatsOnYourMind() {
                 <img src="/images/resume-pic.jpg" alt="" />
                 <span>What's on your mind</span>
             </div>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <div id="post-types">
-                <div id="post-type">
+                <div className="post-type">
                     <img src="/images/live-video.svg" alt="" />
-                    Live video
+                    <span>Live video</span>
                 </div>
-                <div id="post-type">
+                <div className="post-type">
                     <img src="/images/photo-video.svg" alt="" />
-                    Photo/video
+                    <span>Photo/video</span>
                 </div>
-                <div id="post-type">
+                <div className="post-type">
                     <img src="/images/feeling-activity.svg" alt="" />
-                    Feeling/activity
+                    <span>Feeling/activity</span>
                 </div>
             </div>
         </div>

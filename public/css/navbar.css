@@ -1,6 +1,7 @@
 nav {
     display: grid;
-    grid-template-columns: 20rem 1fr max-content;
+    grid-template-columns: max-content 1fr max-content;
+    column-gap: 1em;
     align-items: center;
     padding: .2rem 1em;
     background-color: white;
@@ -148,10 +149,10 @@ nav {
     grid-template-columns: repeat(5, 1fr);
     align-self: stretch;
     column-gap: .5rem;
-    margin-right: 22%;
+    padding-inline: 4em;
 }
 
-#nav-links a {
+#nav-links>a {
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -159,7 +160,11 @@ nav {
     position: relative;
 }
 
-#nav-links a #link-underline {
+#menu {
+    display: none !important;
+}
+
+#nav-links>a #link-underline {
     position: absolute;
     width: 100%;
     height: .2rem;
@@ -167,7 +172,7 @@ nav {
     bottom: -8%;
 }
 
-#nav-links a:hover {
+#nav-links>a:hover {
     background-color: var(--light-gray);
 }
 
@@ -188,13 +193,8 @@ nav {
 }
 
 @media screen and (max-width: 1240px) {
-    nav {
-        grid-template-columns: max-content 1fr max-content;
-    }
 
-    #nav-links {
-        padding-left: 20%;
-    }
+    #nav-links {}
 
     #search-facebook {
         display: none;
@@ -204,4 +204,25 @@ nav {
         display: block;
     }
 
+}
+
+@media screen and (max-width: 1080px) {
+    #nav-links {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #menu {
+        display: grid !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #nav-links {
+        grid-template-columns: max-content;
+        padding-inline: unset;
+    }
+
+    #nav-links>a {
+        display: none;
+    }
 }

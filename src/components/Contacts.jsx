@@ -8,6 +8,17 @@ function Contact({ imgSrc, name }) {
 }
 
 export default function Contacts() {
+    let contacts = [
+        { imgSrc: '/images/twt.jpg', name: 'Tech with Tim' },
+        { imgSrc: '/images/ben.jpg', name: 'Ben Awad' },
+        { imgSrc: '/images/mike.jpg', name: 'Mike Dane' },
+        { imgSrc: '/images/theo.jpg', name: 'Theo' },
+        { imgSrc: '/images/kevin.jpg', name: 'Kevin Powell' },
+        { imgSrc: '/images/jessica.jpg', name: 'Coder Coder' },
+        { imgSrc: '/images/wds.jpg', name: 'Web Dev Simplified' },
+        { imgSrc: '/images/ed.jpg', name: 'Dev Ed' }
+    ]
+
     return (
         <section id="contacts">
             <div id="contact-controls">
@@ -23,15 +34,7 @@ export default function Contacts() {
                 </button>
             </div>
             <div id="contact-list">
-                <Contact imgSrc="/images/twt.jpg" name="Tech with Tim" />
-                <Contact imgSrc="/images/ben.jpg" name="Ben Awad" />
-                <Contact imgSrc="/images/mike.jpg" name="Mike Dane" />
-                <Contact imgSrc="/images/theo.jpg" name="Theo" />
-                <Contact imgSrc="/images/kevin.jpg" name="Kevin Powell" />
-                <Contact imgSrc="/images/jessica.jpg" name="Coder Coder" />
-                <Contact imgSrc="/images/wds.jpg" name="Web Dev Simplified" />
-                <Contact imgSrc="/images/ed.jpg" name="Dev Ed" />
-
+                {contacts.map(contact => <Contact key={contact.imgSrc} imgSrc={contact.imgSrc} name={contact.name} />)}
             </div>
         </section>
     )

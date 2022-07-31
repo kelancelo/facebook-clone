@@ -43,13 +43,17 @@ i {
     display: grid;
     position: fixed;
     width: 100%;
-    grid-template-columns: minmax(max-content, 1fr) 47rem minmax(max-content, 1fr);
+    grid-template-columns: minmax(max-content, 1fr) 40rem minmax(max-content, 1fr);
     top: 3.5rem;
 }
-
-#sidebars {}
 
 #left-side-menu,
 #contacts {
     padding: 1em .5em;
+}
+
+@media screen and (max-width: 1080px) {
+    #home {
+        grid-template-columns: 7fr 3fr;
+    }
 }

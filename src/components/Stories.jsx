@@ -14,7 +14,7 @@ export default function Stories() {
             <div id="create-story">
                 <img src="/images/resume-pic.jpg" alt="" />
                 <div id="create-story-text">
-                    Create story
+                    <span>Create story</span>
                     <button>
                         <img src="/images/plus.svg" alt="" />
                     </button>

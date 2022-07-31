@@ -6,7 +6,7 @@ export default function StoriesAndPosts() {
     return (
         <section id="stories-and-posts">
             <Stories />
-            <div style={{ paddingInline: '2.5em' }}>
+            <div id="below-stories">
                 <WhatsOnYourMind />
                 <Posts />
             </div>
